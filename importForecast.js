@@ -42,6 +42,9 @@ const influx = new Influx.InfluxDB({
                 sun_cover: Influx.FieldType.FLOAT,
                 pressure: Influx.FieldType.FLOAT,
                 ozone: Influx.FieldType.FLOAT,
+                uv_index: Influx.FieldType.FLOAT,
+                uv_index_time: Influx.FieldType.FLOAT,
+                icon: Influx.FieldType.STRING,
                 daytime: Influx.FieldType.BOOLEAN,
                 daytime_show: Influx.FieldType.FLOAT,
                 nightime_show: Influx.FieldType.FLOAT
@@ -113,6 +116,9 @@ var getForecast = function () {
                             sun_cover: sun_cover,
                             pressure: fc.pressure,
                             ozone: fc.ozone,
+                            uv_index: fc.uvIndex,
+                            uv_index_time: fc.uvIndexTime,
+                            icon: fc.icon,
                             daytime: daytime,
                             daytime_show: daytime_show,
                             nightime_show: nightime_show
