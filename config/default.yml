@@ -3,13 +3,13 @@ general:
   cron: '*/15 * * * *'
 darksky:
   key: DARKSKY_KEY
-  units: auto
+  units: si
   language: en
-  longitude: DARKSKY_LONGITUDE
   latitude: DARKSKY_LATITUDE
+  longitude: DARKSKY_LONGITUDE  
 influxdb:
   host: INFLUXDB_HOST
   port: INFLUXDB_PORT
   database: INFLUXDB_DATABASE
   username: INFLUXDB_USERNAME
-password: INFLUXDB_PASSWORD
+  password: INFLUXDB_PASSWORD
