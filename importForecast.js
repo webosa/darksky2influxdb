@@ -33,6 +33,7 @@ const influx = new Influx.InfluxDB({
             fields: {
                 precipIntensity: Influx.FieldType.FLOAT,
                 precipProbability: Influx.FieldType.FLOAT,
+                precipType: Influx.FieldType.STRING,
                 temperature: Influx.FieldType.FLOAT,
                 apparent_temperature: Influx.FieldType.FLOAT,
                 dew_point: Influx.FieldType.FLOAT,
@@ -44,8 +45,10 @@ const influx = new Influx.InfluxDB({
                 pressure: Influx.FieldType.FLOAT,
                 ozone: Influx.FieldType.FLOAT,
                 uv_index: Influx.FieldType.FLOAT,
-                uv_index_time: Influx.FieldType.FLOAT,
                 icon: Influx.FieldType.STRING,
+                moon_phase: Influx.FieldType.FLOAT,
+                sunriseTime: Influx.FieldType.INTEGER,
+                sunsetTime: Influx.FieldType.INTEGER,
                 daytime: Influx.FieldType.BOOLEAN,
                 daytime_show: Influx.FieldType.FLOAT,
                 nightime_show: Influx.FieldType.FLOAT
@@ -107,6 +110,7 @@ var getForecast = function () {
                         fields: {
                             precipIntensity: fc.precipIntensity,
                             precipProbability: fc.precipProbability,
+                            precipType: fc.precipAccumulation,
                             temperature: fc.temperature,
                             apparent_temperature: fc.apparentTemperature,
                             dew_point: fc.dewPoint,
@@ -118,8 +122,10 @@ var getForecast = function () {
                             pressure: fc.pressure,
                             ozone: fc.ozone,
                             uv_index: fc.uvIndex,
-                            uv_index_time: fc.uvIndexTime,
                             icon: fc.icon,
+                            moon_phase: day.moonPhase,
+                            sunriseTime: day.sunriseTime,
+                            sunsetTime: day.sunsetTime,
                             daytime: daytime,
                             daytime_show: daytime_show,
                             nightime_show: nightime_show
